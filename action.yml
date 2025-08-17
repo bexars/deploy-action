@@ -14,9 +14,9 @@ inputs:
     required: true
     default: "stable"
   outDirectory:
-    description: "The `out_dir` property configured in Dioxus.toml [default: 'dist']"
+    description: "The `out_dir` property configured in Dioxus.toml [default: 'docs']"
     required: true
-    default: "dist"
+    default: "docs"
   rootPath:
     description: "Source code root path [default: '.']"
     required: true
