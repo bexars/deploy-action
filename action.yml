@@ -17,6 +17,10 @@ inputs:
     description: "The `out_dir` property configured in Dioxus.toml [default: 'dist']"
     required: true
     default: "dist"
+  ghpagesDirectory:
+    description: "The directory in github-pages branch to output into"
+    required: true
+    default: "docs"
   rootPath:
     description: "Source code root path [default: '.']"
     required: true
@@ -42,10 +46,10 @@ runs:
       run: cd ${{ inputs.rootPath }} && dx bundle --${{ inputs.buildMode }} && mv ./${{ inputs.outDirectory }}/public/* ./${{ inputs.outDirectory }} && cp ./${{ inputs.outDirectory }}/index.html ./${{ inputs.outDirectory }}/404.html
 
     - name: Deploy Project 🚀
-      uses: JamesIves/github-pages-deploy-action@v4.4.1
+      uses: JamesIves/github-pages-deploy-action@v4.7.3
       with:
         branch: gh-pages
         folder: ${{ inputs.rootPath }}/${{ inputs.outDirectory }}
-        target-folder: ./docs/
+        target-folder: ${{ inputs.ghpagesDirectory }}
         single-commit: true
         clean: true
