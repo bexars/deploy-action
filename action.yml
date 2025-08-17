@@ -14,9 +14,9 @@ inputs:
     required: true
     default: "stable"
   outDirectory:
-    description: "The `out_dir` property configured in Dioxus.toml [default: 'docs']"
+    description: "The `out_dir` property configured in Dioxus.toml [default: 'dist']"
     required: true
-    default: "docs"
+    default: "dist"
   rootPath:
     description: "Source code root path [default: '.']"
     required: true
@@ -46,6 +46,6 @@ runs:
       with:
         branch: gh-pages
         folder: ${{ inputs.rootPath }}/${{ inputs.outDirectory }}
-        target-folder: ${{ inputs.outDirectory }}
+        target-folder: ./docs/
         single-commit: true
         clean: true
