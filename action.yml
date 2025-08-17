@@ -46,5 +46,5 @@ runs:
       with:
         branch: gh-pages
         folder: ${{ inputs.rootPath }}/${{ inputs.outDirectory }}
-        target-folder: ${{ input.outDirectory }}
+        target-folder: ${{ inputs.outDirectory }}
         clean: false
