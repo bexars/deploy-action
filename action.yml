@@ -35,7 +35,7 @@ runs:
     - uses: Swatinem/rust-cache@v2
     - name: Install Dioxus-CLI
       shell: bash
-      run: cargo install dioxus-cli
+      run: cargo install dioxus-cli@0.7.0-rc.0
 
     - name: Build Project 🎁
       shell: bash
