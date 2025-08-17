@@ -48,4 +48,4 @@ runs:
         folder: ${{ inputs.rootPath }}/${{ inputs.outDirectory }}
         target-folder: ${{ inputs.outDirectory }}
         single-commit: true
-        clean: false
+        clean: true
